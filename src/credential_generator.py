@@ -1,13 +1,16 @@
 from config import NUMBER_OF_STUDENTS
 
 
-def generate_credentials():
+def generate_credentials():  # Generate a list of test credentials
     accounts = []
 
     for student_id in range(1, NUMBER_OF_STUDENTS + 1):
-        username = f"test001{student_id:03d}"
+        username = f"test001{student_id:03d}"  # Generate a username in the format "test001XXX" where XXX is the student ID padded with zeros
 
-        account = {"email": f"{username}@collegename.in", "password": username}
+        account = {
+            "email": f"{username}@collegename.in",
+            "password": username,
+        }  # Generate a password that is the same as the username
 
         accounts.append(account)
 

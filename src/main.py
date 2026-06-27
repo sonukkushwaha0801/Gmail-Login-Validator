@@ -4,7 +4,7 @@ from excel_handler import save_results
 
 
 def main():
-    accounts = generate_credentials()
+    accounts = generate_credentials()  # Generate a list of test credentials
 
     success_accounts = []
     failed_accounts = []

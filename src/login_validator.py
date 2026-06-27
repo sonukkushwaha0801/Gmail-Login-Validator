@@ -1,3 +1,4 @@
+import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -6,10 +7,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from config import LOGIN_URL, WAIT_TIME
-import time
 
 
-def login_account(email, password):
+def login_account(email, password):  # Attempt to log in to a Gmail account using Selenium and return the result
     chrome_options = Options()
     chrome_options.binary_location = "/usr/bin/chromium"
 

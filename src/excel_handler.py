@@ -3,14 +3,16 @@ import os
 from config import OUTPUT_FILE
 
 
-def save_results(success_accounts, failed_accounts):
+def save_results(
+    success_accounts, failed_accounts
+):  # Save the results of the login attempts to an Excel file
     os.makedirs(os.path.dirname(str(OUTPUT_FILE)), exist_ok=True)
-
     success_df = pd.DataFrame(success_accounts, columns=["Email", "Password", "Status"])
-
     failed_df = pd.DataFrame(failed_accounts, columns=["Email", "Password", "Reason"])
 
-    with pd.ExcelWriter(OUTPUT_FILE, engine="openpyxl") as writer:
+    with pd.ExcelWriter(
+        OUTPUT_FILE, engine="openpyxl"
+    ) as writer:  # Use openpyxl as the engine for writing Excel files
         success_df.to_excel(writer, sheet_name="Success", index=False)
         failed_df.to_excel(writer, sheet_name="Failed", index=False)
 
