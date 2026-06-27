@@ -1,6 +1,6 @@
 from pathlib import Path
 
-NUMBER_OF_STUDENTS = 135
+NUMBER_OF_STUDENTS = 3
 LOGIN_URL = "https://accounts.google.com/"
 WAIT_TIME = 10
 BASE_DIR = Path(__file__).resolve().parent.parent

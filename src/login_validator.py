@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -9,7 +10,19 @@ import time
 
 
 def login_account(email, password):
-    driver = webdriver.Chrome()
+    chrome_options = Options()
+    chrome_options.binary_location = "/usr/bin/chromium"
+
+    chrome_options.add_argument("--headless=new")
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_argument("--disable-gpu")
+    chrome_options.add_argument("--window-size=1920,1080")
+
+    print("Starting browser...")
+    driver = webdriver.Chrome(options=chrome_options)
+    print("Browser started successfully")
+    # driver = webdriver.Chrome()
 
     try:
         driver.fullscreen_window()
@@ -22,14 +35,16 @@ def login_account(email, password):
         email_box.send_keys(email + Keys.ENTER)
 
         # Password Input
-        password_box = WebDriverWait(driver, WAIT_TIME).until(
-            EC.element_to_be_clickable(
-                (By.XPATH, '//*[@id="password"]/div[1]/div/div[1]/input')
+        try:
+            password_box = WebDriverWait(driver, WAIT_TIME).until(
+                EC.element_to_be_clickable(
+                    (By.XPATH, '//*[@id="password"]/div[1]/div/div[1]/input')
+                )
             )
-        )
-        password_box.send_keys(password + Keys.ENTER)
-
-        time.sleep(5)
+            password_box.send_keys(password + Keys.ENTER)
+            time.sleep(5)
+        except Exception as e:
+            return False, f"Incorrect Email"
 
         # Wait for login result
         try:
@@ -48,8 +63,8 @@ def login_account(email, password):
 
 
 if __name__ == "__main__":
-    email = "2026MBA001@Collegesname.in"
-    password = "2026MBA001"
+    email = "test001004@collegename.in"
+    password = "test001004"
 
     status, message = login_account(email, password)
     print(status, message)

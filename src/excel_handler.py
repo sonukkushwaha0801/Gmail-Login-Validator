@@ -18,8 +18,6 @@ def save_results(success_accounts, failed_accounts):
 
 
 if __name__ == "__main__":
-    success_accounts = [
-        ["college001@axiscolleges.in", "college001", "Login Successful"]
-    ]
-    failed_accounts = [["college002@axiscolleges.in", "college002", "Login Failed"]]
+    success_accounts = [["test001003@collegename.in", "test001003", "Login Successful"]]
+    failed_accounts = [["test001004@collegename.in", "test001004", "Login Failed"]]
     save_results(success_accounts, failed_accounts)
