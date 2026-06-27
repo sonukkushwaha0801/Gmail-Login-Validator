@@ -170,9 +170,10 @@ The report contains 2 sheets:
 * Logging support
 * Single browser session optimization
 
----
+---ṁ
 
 ## Author
 
 **Author:** Sonu Kumar Kushwaha [sonukkushwaha0801]
+
 **Collaborator:** Zenithra [zenithrahub]
