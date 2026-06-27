@@ -170,7 +170,7 @@ The report contains 2 sheets:
 * Logging support
 * Single browser session optimization
 
----ṁ
+
 
 ## Author
 
