@@ -2,7 +2,7 @@
 
 ![Gmail-Login-Validator](./assets/Banner.webp)
 
-[![Docker CI Pipeline](https://github.com/sonukkushwaha0801/Gmail-Login-Validator/actions/workflows/ci.yaml/badge.svg)](https://github.com/sonukkushwaha0801/Gmail-Login-Validator/actions/workflows/ci.yaml)
+[![Docker CI Pipeline](https://github.com/sonukkushwaha0801/Gmail-Login-Validator/actions/workflows/docker-ci.yml/badge.svg?branch=main)](https://github.com/sonukkushwaha0801/Gmail-Login-Validator/actions/workflows/docker-ci.yml)
 
 ---
 
